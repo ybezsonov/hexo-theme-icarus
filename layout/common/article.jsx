@@ -94,16 +94,17 @@ module.exports = class extends Component {
                     {!index && article && article.licenses && Object.keys(article.licenses)
                         ? <ArticleLicensing.Cacheable page={page} config={config} helper={helper} /> : null}
                     {/* Tags */}
-                    {!index && page.tags && page.tags.length ? <div class="article-tags is-size-7 mb-4">
-                        <span class="mr-2">#</span>
+                    {!index && page.tags && page.tags.length ? <div class="article-tags is-size-6 mb-4">
+                        <span class="mr-2">Tags:</span>
                         {page.tags.map(tag => {
-                            return <a class="link-muted mr-2" rel="tag" href={url_for(tag.path)}>{tag.name}</a>;
+                            return <a class="link mr-2" rel="tag" href={url_for(tag.path)}>{tag.name}</a>;
                         })}
                     </div> : null}
                     {/* "Read more" button */}
                     {index && page.excerpt ? <a class="article-more button is-small is-size-7" href={`${url_for(page.link || page.path)}#more`}>{__('article.more')}</a> : null}
                     {/* Share button */}
                     {!index ? <Share config={config} page={page} helper={helper} /> : null}
+                    {/* :TODO add https://kiko.io/post/Show-related-posts-in-Hexo/ */}
                 </article>
             </div>
             {/* Donate button */}
