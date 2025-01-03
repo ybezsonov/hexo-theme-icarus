@@ -38,9 +38,9 @@ module.exports = class extends Component {
             <div class="card">
                 {/* Thumbnail */}
                 {cover ? <div class="card-image">
-                    {index ? <a href={url_for(page.link || page.path)} class="image is-7by3">
+                    {index ? <a href={url_for(page.link || page.path)} class="image is-7by4">
                         <img class="fill" src={cover} alt={page.title || cover} />
-                    </a> : <span class="image is-7by3">
+                    </a> : <span class="image is-7by4">
                         <img class="fill" src={cover} alt={page.title || cover} />
                     </span>}
                 </div> : null}
